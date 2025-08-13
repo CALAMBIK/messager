@@ -1,1 +1,19 @@
-<div>sidepanel works!</div>
+<div class="sidepanel">
+  <div class="messager-icon">
+    <img src="assets/imgs/icon-messager.png" alt="" />
+  </div>
+  <div class="sidepanel-nav-menu">
+    @for(submenu of menu; track submenu){
+    <button
+      class="menu-btn"
+      [routerLink]="submenu.path"
+      routerLinkActive="router-link-active"
+    >
+      <div class="menu-icon">
+        <img [src]="submenu.icon" [alt]="submenu.name" />
+      </div>
+      <div class="menu-name">{{submenu.name}}</div>
+    </button>
+    }
+  </div>
+</div>
