@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@messager/libs/root": ["libs/root/shell/src/index.ts"]
+      "@messager/libs/home/home-shell": ["libs/home/home-shell/src/index.ts"],
+      "@messager/libs/home/profile-list": [
+        "libs/home/profile-list/src/index.ts"
+      ],
+      "@messager/libs/root": ["libs/root/shell/src/index.ts"],
+      "@messager/libs/avatar-pipe": ["libs/shared/pipes/avatar.pipe.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -4,6 +4,7 @@
   --dark-color: #000000;
   --white-color: #ffffff;
   --hover-color: #161616;
+  --purple-color: #ae7aff;
 }
 
 html,
@@ -19,5 +20,20 @@ body {
   background-image: url('../public/assets/imgs/background.png');
   background-size: cover;
   background-position: left center;
+  background-attachment: fixed;
   color: var(--white-color);
+}
+
+.skill-tag {
+  padding: 4px 8px;
+  border: 1px solid var(--white-color);
+  border-radius: 2px;
+  height: min-content;
+}
+
+.btn {
+  background: var(--purple-color);
+  color: var(--dark-color);
+  border: none;
+  cursor: pointer;
 }
