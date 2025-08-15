@@ -1,7 +1,7 @@
-import { AvatarPipe } from '@messager/libs/avatar-pipe';
+import { AvatarPipe } from '@messager/libs/shared/avatar-pipe';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Profile } from '../models/profile.model';
+import { Profile } from '@messager/libs/search/search-domain';
 
 @Component({
   selector: 'lib-profile-card',

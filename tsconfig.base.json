@@ -15,12 +15,17 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@messager/libs/home/home-shell": ["libs/home/home-shell/src/index.ts"],
-      "@messager/libs/home/profile-list": [
-        "libs/home/profile-list/src/index.ts"
+      "@messager/libs/auth/auth-domain": ["libs/auth/auth-domain/src/index.ts"],
+      "@messager/libs/auth/auth-page": ["libs/auth/auth-page/src/index.ts"],
+      "@messager/libs/chats": ["libs/chats/chats/src/index.ts"],
+      "@messager/libs/search/search-domain": [
+        "libs/search/search-domain/src/index.ts"
+      ],
+      "@messager/libs/search/profile-list": [
+        "libs/search/profile-list/src/index.ts"
       ],
       "@messager/libs/root": ["libs/root/shell/src/index.ts"],
-      "@messager/libs/avatar-pipe": ["libs/shared/pipes/avatar.pipe.ts"]
+      "@messager/libs/shared/avatar-pipe": ["libs/shared/pipes/avatar.pipe.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

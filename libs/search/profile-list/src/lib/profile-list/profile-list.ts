@@ -3,11 +3,12 @@ import {
   Component,
   inject,
   OnInit,
+  signal,
+  WritableSignal,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileService } from '../services/profile.service';
-import { Profile } from '../models/profile.model';
 import { ProfileCard } from '../profile-card/profile-card';
+import { Profile, ProfileService } from '@messager/libs/search/search-domain';
 
 @Component({
   selector: 'lib-profile-list',
@@ -18,11 +19,11 @@ import { ProfileCard } from '../profile-card/profile-card';
 })
 export class ProfileList implements OnInit {
   private readonly profileService = inject(ProfileService);
-  public profiles: Profile[] = [];
+  public profiles: WritableSignal<Profile[]> = signal([]);
 
   ngOnInit(): void {
     this.profileService
       .getTestAccounts()
-      .subscribe((value) => (this.profiles = value));
+      .subscribe((value) => this.profiles.set(value));
   }
 }
