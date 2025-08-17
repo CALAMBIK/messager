@@ -63,6 +63,15 @@ img {
     cursor: pointer;
     color: white;
   }
+
+  .toggle-username {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
 }
 
 .toggle-password.active {

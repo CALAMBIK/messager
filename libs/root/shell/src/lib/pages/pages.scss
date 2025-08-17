@@ -1,9 +1,11 @@
 :host {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: auto 1fr;
   height: 100%;
 }
 
 .main-content {
   margin: 24px;
+  margin-left: calc(240px + 24px);
+  width: calc(100% - 240px - 48px);
 }
