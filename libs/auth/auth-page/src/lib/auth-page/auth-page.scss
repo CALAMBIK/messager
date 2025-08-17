@@ -49,3 +49,22 @@ img {
   font-size: 14px;
   padding: 10px 20px;
 }
+
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.toggle-password.active {
+  color: var(--purple-color);
+}

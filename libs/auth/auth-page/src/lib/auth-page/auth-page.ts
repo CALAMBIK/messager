@@ -1,5 +1,10 @@
 import { AuthService } from '@messager/libs/auth/auth-domain';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -20,6 +25,8 @@ export class AuthPage {
   private readonly authService = inject(AuthService);
   private readonly router = inject(Router);
 
+  public isVisible = signal<boolean>(false);
+
   public authForm = new FormGroup({
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
@@ -30,5 +37,9 @@ export class AuthPage {
     this.authService
       .login(this.authForm.value as { username: string; password: string })
       .subscribe(() => this.router.navigate(['']));
+  }
+
+  public onIsVisible() {
+    this.isVisible.set(!this.isVisible());
   }
 }
