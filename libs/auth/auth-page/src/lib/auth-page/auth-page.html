@@ -1,0 +1,22 @@
+<form class="auth-form" (submit)="onSubmit()" [formGroup]="authForm">
+  <h1 class="auth-form__entry">Вход</h1>
+  <label class="auth-form__label"
+    >Telegram username
+    <input
+      formControlName="username"
+      class="auth-form__input"
+      type="text"
+      placeholder="Ввведите логин"
+  /></label>
+  <label class="auth-form__label"
+    >Пароль
+    <input
+      formControlName="password"
+      class="auth-form__input"
+      type="password"
+      placeholder="Введите пароль"
+  /></label>
+  <button class="btn auth-btn" type="submit">Войти</button>
+</form>
+
+<img src="assets/imgs/auth-icon.svg" alt="" />
