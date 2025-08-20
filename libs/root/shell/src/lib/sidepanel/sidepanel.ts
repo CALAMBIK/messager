@@ -1,6 +1,15 @@
+import { SubscriberNavCard } from '@messager/libs/subscribers/subscriber-nav-card';
 import { RouterModule } from '@angular/router';
-import { ChangeDetectionStrategy, Component, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+  Type,
+} from '@angular/core';
+import { AsyncPipe, CommonModule, JsonPipe } from '@angular/common';
+import { AccountService } from '@messager/libs/root/root-domain';
+import { firstValueFrom } from 'rxjs';
 
 type MenuCategory = {
   icon: string;
@@ -11,12 +20,18 @@ type MenuCategory = {
 
 @Component({
   selector: 'lib-sidepanel',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AsyncPipe, SubscriberNavCard],
   templateUrl: './sidepanel.html',
   styleUrl: './sidepanel.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Sidepanel {
+export class Sidepanel implements OnInit {
+  private readonly accountService = inject(AccountService);
+
+  public subscribers$ = this.accountService.getSubscribers();
+
+  public me = this.accountService.me;
+
   public menu: MenuCategory[] = [
     {
       icon: 'assets/imgs/home.png',
@@ -34,4 +49,8 @@ export class Sidepanel {
       path: 'search',
     },
   ];
+
+  ngOnInit(): void {
+    firstValueFrom(this.accountService.getMe());
+  }
 }

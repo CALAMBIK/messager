@@ -26,7 +26,10 @@
       "@messager/libs/search/search-domain": [
         "libs/search/search-domain/src/index.ts"
       ],
-      "@messager/libs/shared/avatar-pipe": ["libs/shared/pipes/avatar.pipe.ts"]
+      "@messager/libs/shared/avatar-pipe": ["libs/shared/pipes/avatar.pipe.ts"],
+      "@messager/libs/subscribers/subscriber-nav-card": [
+        "libs/subcribers/subscriber-nav-card/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

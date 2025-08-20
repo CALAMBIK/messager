@@ -50,3 +50,50 @@
 .router-link-active {
   background: var(--hover-color);
 }
+
+.subscribes {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey-color);
+  margin: 20px 0px;
+  padding: 0 20px;
+}
+
+.all-subsribers {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--purple-color);
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.footer {
+  background: var(--hover-color);
+  border-radius: 2px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 14px;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+  margin-top: 275px;
+
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .username-text {
+    font-weight: 700;
+    color: var(--purple-color);
+  }
+
+  a {
+    position: absolute;
+    top: 13px;
+    right: 10px;
+  }
+}
